@@ -3,12 +3,12 @@
 <%= render 'layouts/error_messages', model: f.object %>
 
   <div class="field">
-    <%= f.label :title, "カラムの名称" %><br />
+    <%= f.label :title, "タイトル" %><br />
     <%= f.text_field :title, id: "word_title", class: :title_form %>
   </div>
 
   <div class="field">
-    <%= f.label :tug, "タグ" %><br />
+    <%= f.label :tug, "サブタイトル" %><br />
     <%= f.text_field :tug, id: "word_catch_copy", class: :tug_form %>
   </div>
 

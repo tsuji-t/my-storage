@@ -8,7 +8,7 @@ class WordsController < ApplicationController
   end
 
   def create
-    @word = Word.new
+    @word = Word.new(word_params)
     if @word.save
       redirect_to root_path
     else
@@ -17,5 +17,8 @@ class WordsController < ApplicationController
   end
 
   private
-  
+
+  def word_params
+    params.require(:word).permit(:title, :tug, :text).merge(user_id: current_user.id)
+  end
 end
