@@ -1,0 +1,24 @@
+<%= form_with model: word, local: true do |f|%>
+
+<%= render 'layouts/error_messages', model: f.object %>
+
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, id: "word_title", class: :title_form %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tug, "サブタイトル" %><br />
+    <%= f.text_field :tug, id: "word_catch_copy", class: :tug_form %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text, "投稿記事" %><br />
+    <%= f.text_area :text, class: :form__text, id: "editor" , class: :text_form %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
