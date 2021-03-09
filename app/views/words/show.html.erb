@@ -1,0 +1,33 @@
+<main class="main">
+  <div class="inner main-inner">
+
+    <%# ログインしているときは以下を表示する %>
+      <% if user_signed_in?%>
+       <div class="greeting">
+        <%= link_to "#{current_user.nickname}さん", root_path, class: :greeting__link %>
+      </div>
+      <% end %>
+
+
+    <div class="word__wrapper">
+      <div class="date-user">
+        <p class="word__created">
+          <%= @word.created_at %>
+        </p>
+        <%= link_to "by #{@word.user.nickname}", root_path, class: :card__user %>
+      </div>
+      <h1 class="show_title">
+        <%= @word.title %>
+      </h1>
+      <div class="show_tug">
+        <%= @word.tug %>
+      </div>
+      <div class="show_text">
+        <%= markdown(@word.text).html_safe %>
+      </div>
+    </div>
+    
+  </div>
+  <%= render partial: "layouts/side_ber",locals: { words: @side_words } %>
+</main>
+
