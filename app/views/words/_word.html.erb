@@ -1,7 +1,7 @@
 <div class="card">
   <%= link_to word.title, root_path, class: :card__img %>
   <div class="card__body">
-    <%= link_to word.text, root_path, class: :card__title%>
+    <%= link_to markdown(word.text).html_safe, root_path, class: :card__title%>
     <p class="card__summary">
       <%= "プロトタイプのキャッチコピー" %>
     </p>
