@@ -5,5 +5,5 @@
         <%= render partial: "form", locals: { word: @word } %>
     </div>
   </div>
-  <%= render "layouts/side_ber" %>
+  <%= render partial: "layouts/side_ber",locals: { words: @side_words } %>
 </div>

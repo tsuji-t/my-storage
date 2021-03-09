@@ -1,21 +1,12 @@
 <div class="side_ber" >
-  <div class="side-top">
-    <div class="user-name">
-    <%= link_to "カラム", root_path %>
-    </div>
-    <div class="word-index">
-    <%= link_to "チャットを作成する", root_path %>
-    </div>
+  <div class="side_inner">
+    <p class="side_top">カラム一覧</p>
+      <ul class="word_index">
+        <% words.each do |word| %>
+        <li class="word_each">
+          <%= link_to word.title, root_path %>
+        <% end %>
+        </li>
+      </ul>
   </div>
 </div>
-
-
-<%# <div class="side-bottom"> %>
-  <%# <% current_user.rooms.each do |room| %>
-    <%# <div class="room-name"> %>
-      <%# <div class="room-link"> %>
-        <%# <%= link_to room.name, room_messages_path(room) %> 
-      <%# </div> %>
-    <%# </div> %>
-  <%# <% end %> 
-<%# </div> %>

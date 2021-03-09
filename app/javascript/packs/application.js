@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("simplemde")
 require("mde")
+require("redcarpet")
+require("coderay")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
