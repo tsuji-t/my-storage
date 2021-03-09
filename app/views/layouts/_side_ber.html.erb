@@ -4,7 +4,7 @@
       <ul class="word_index">
         <% words.each do |word| %>
         <li class="word_each">
-          <%= link_to word.title, root_path %>
+          <%= link_to word.title, word_path(word.id) %>
         <% end %>
         </li>
       </ul>

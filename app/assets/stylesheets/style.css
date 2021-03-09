@@ -160,7 +160,14 @@ a {
   height: 500px;
   font-size: 20px;
   color: black;
+}
 
+.nav_edit{
+  padding: 1em 1.6em;
+  font-size: 0.8em;
+  color: #9b9b9b;
+  text-decoration: none;
+  float: right;
 }
 
 /* サイドバー */
@@ -172,6 +179,7 @@ a {
 
 .main-inner{
   background-color: white;
+  margin-bottom: 48px;
 }
 
 .side_ber{
