@@ -1,7 +1,9 @@
 class WordsController < ApplicationController
+  before_action :side_ber
 
   def index
-    @words = Word.all
+    @word = Word.includes(:user).order('created_at DESC')
+    @words = @word.first(5)
   end
 
   def new
@@ -18,6 +20,10 @@ class WordsController < ApplicationController
   end
 
   private
+
+  def side_ber
+    @side_words = Word.includes(:user).order('created_at DESC')
+  end
 
   def word_params
     params.require(:word).permit(:title, :tug, :text).merge(user_id: current_user.id)

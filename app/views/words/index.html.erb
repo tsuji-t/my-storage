@@ -8,13 +8,11 @@
       </div>
       <% end %>
     <%# // ログインしているときは上記を表示する %>
-    <div class="card__wrapper">
+    <div class="word__wrapper">
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <h2 class="word index">新着一覧</h2>
       <%= render partial: 'word', collection: @words %>
-      
     </div>
-    
   </div>
-
-  <%= render "layouts/side_ber" %>
+  <%= render partial: "layouts/side_ber",locals: { words: @side_words } %>
 </main>
