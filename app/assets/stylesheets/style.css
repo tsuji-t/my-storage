@@ -187,10 +187,12 @@ a {
 
 .side_top{
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .word_each{
-  margin: 0 10px 10px;
+  margin: 0 15px 20px;
+  line-height: 1.2em
 }
 
 
