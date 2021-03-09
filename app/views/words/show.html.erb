@@ -26,7 +26,8 @@
         <%= markdown(@word.text).html_safe %>
       </div>
     </div>
-    
+    <%= link_to "編集", edit_word_path(@word.id), class: :nav_edit %>
+    </div>
   </div>
   <%= render partial: "layouts/side_ber",locals: { words: @side_words } %>
 </main>
