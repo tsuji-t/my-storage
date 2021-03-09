@@ -3,3 +3,6 @@ ja:
     attributes:
       user:
         nickname: ユーザー名
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"

@@ -4,7 +4,7 @@
     <%= link_to word.title, word_path(word.id), class: :word__title%>
     <div class="date-user">
       <p class="word__created">
-        <%= word.created_at %>
+        <%= l word.created_at %>
       </p>
       <%= link_to "by #{word.user.nickname}", root_path, class: :card__user %>
     </div>
