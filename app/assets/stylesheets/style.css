@@ -252,36 +252,22 @@ a {
 }
 
 /* 詳細ページ */
-.prototype__wrapper{
-  min-height: calc(100vh - 161px);
+
+.show_title{
+  margin: 40px 0;
 }
-.prototype__hedding{
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
+
+.show_tug{
+  margin-bottom: 40px;
 }
-.prototype__user{
-  display: block;
-  font-size: 16px;
-  color: #999;
-  text-align: center;
-  text-decoration: underline;
+
+.show_text{
+  font-size: 17px;
+  margin-bottom: 40px;
 }
-.prototype__image{
-  width: 40%;
-  margin: 0 auto;
-  padding: 16px 0;
-}
-.prototype__detail{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 8px;
-}
-.detail__title{
-  font-size: 20px;
-  font-weight: bold;
-}
+
+
+
 .prototype__manage{
   display: flex;
   justify-content: center;
