@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
   before_action :side_ber
-
+  before_action :find_word, only: [:show, :edit, :updete, :destroy]
   def index
     @word = Word.includes(:user).order('created_at DESC')
     @words = @word.first(5)
@@ -20,15 +20,12 @@ class WordsController < ApplicationController
   end
 
   def show
-    @word = Word.find(params[:id])
   end
 
   def edit
-    @word = Word.find(params[:id])
   end
 
   def update
-    @word = Word.find(params[:id])
     if @word.update(word_params)
       redirect_to root_path
     else
@@ -36,7 +33,17 @@ class WordsController < ApplicationController
     end
   end
 
+  def destroy
+    @word.destroy
+    redirect_to root_path
+  end
+
+
   private
+
+  def find_word
+    @word = Word.find(params[:id])
+  end
 
   def side_ber
     @side_words = Word.includes(:user).order('created_at DESC')
