@@ -1,7 +1,7 @@
 <div class="side_ber" >
   <%= form_with(url: root_path, local: true, method: :get, class: "search_form") do |form| %>
     <%= form.text_field :keyword, placeholder: "キーワード検索", class: "search_input" %>
-    <%= form.submit "&#xf002;", class: "search_btn" %>
+    <%= form.submit "検索", class: "search_btn" %>
   <% end %>
   <div class="side_inner">
     <p class="side_top">カラム一覧</p>
