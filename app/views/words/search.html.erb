@@ -8,11 +8,14 @@
       </div>
       <% end %>
     
-    <div class="word__wrapper">
 
-      <%# 部分テンプレートで一覧を表示 %>
-      <h2 class="word index">新着一覧</h2>
-      <%= render partial: 'word', collection: @words %>
+    <div class="word__wrapper">
+      <% if @words.empty?  %>
+        <h2 class="word index">一致するものは見つかりませんでした。</h2>
+      <% else %>
+        <h2 class="word index">検索結果</h2>
+        <%= render partial: 'word', collection: @words %>
+      <% end %>
     </div>
   </div>
   <%= render partial: "layouts/side_ber",locals: { words: @side_words } %>

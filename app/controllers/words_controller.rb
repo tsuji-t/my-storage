@@ -38,6 +38,9 @@ class WordsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @words = Word.search(params[:keyword])
+  end
 
   private
 
