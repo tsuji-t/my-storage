@@ -12,7 +12,7 @@
 
       <%# 部分テンプレートで一覧を表示 %>
       <h2 class="word index">新着一覧</h2>
-      <%= render partial: 'word', collection: @words %>
+      <%= render partial: 'layouts/word', collection: @words %>
     </div>
   </div>
   <%= render partial: "layouts/side_ber",locals: { words: @side_words } %>
