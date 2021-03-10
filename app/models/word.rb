@@ -6,4 +6,13 @@ class Word < ApplicationRecord
   end
 
   belongs_to :user
+
+  def self.search(search)
+    if search != ""
+      Word.where('title LIKE(?) or tug LIKE(?)', "%#{search}%", "%#{search}%")
+    else
+      Word.all
+    end
+  end
+
 end
