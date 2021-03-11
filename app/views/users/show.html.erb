@@ -12,10 +12,12 @@
     <div class="word__wrapper">
       <% if @words.empty?  %>
         <h2 class="word index">
-        <%= "「#{@keyword}」に一致するものは見つかりませんでした。" %>
+        <%= "「#{@user.nickname}」さんの投稿はありません。" %>
         </h2>
       <% else %>
-        <h2 class="word index">検索結果一覧</h2>
+        <h2 class="word index">
+        <%= "「#{@user.nickname}」さんの投稿一覧" %>
+        </h2>
         <%= render partial: 'layouts/word', collection: @words %>
       <% end %>
     </div>
