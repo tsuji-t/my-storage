@@ -1,0 +1,26 @@
+<main class="main">
+  <div class="inner main-inner">
+    <%# ログインしているときは以下を表示する %>
+      <% if user_signed_in?%>
+       <div class="greeting">
+         こんにちは、
+        <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link %>
+      </div>
+      <% end %>
+    
+
+    <div class="word__wrapper">
+      <% if @words.empty?  %>
+        <h2 class="word index">
+        <%= "「#{@user.nickname}」さんの投稿はありません。" %>
+        </h2>
+      <% else %>
+        <h2 class="word index">
+        <%= "「#{@user.nickname}」さんの投稿一覧" %>
+        </h2>
+        <%= render partial: 'layouts/word', collection: @words %>
+      <% end %>
+    </div>
+  </div>
+  <%= render partial: "layouts/side_ber",locals: { words: @side_words } %>
+</main>
