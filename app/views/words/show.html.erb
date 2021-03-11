@@ -40,22 +40,31 @@
     </div>
 
     <div class="inner main-inner">
-
-      
-      <% @comments.each do |comment|%>
+      <h2 class="com_index">コメント一覧</h2>
+      <% if @comments.empty? %>
         <div class="comment">
-          <div class="comment_body">
-            <div class="comment_title">
-              <%= comment.message %>
-            </div>
-            <div class="date-user">
-              <p class="word__created">
-              <%= l comment.created_at %>
-              </p>
-              <%= link_to "by  #{comment.user.nickname}", user_path(comment.user.id), class: :card__user %>
+            <div class="comment_body">
+              <div class="comment_title">
+                コメントはまだありません
+              </div>
             </div>
           </div>
-        </div>
+      <% else %>
+        <% @comments.each do |comment|%>
+          <div class="comment">
+            <div class="comment_body">
+              <div class="comment_title">
+                <%= comment.message %>
+              </div>
+              <div class="date-user">
+                <p class="word__created">
+                <%= l comment.created_at %>
+                </p>
+                <%= link_to "by  #{comment.user.nickname}", user_path(comment.user.id), class: :card__user %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
 
@@ -64,7 +73,7 @@
         <%= form_with model: [@word, @comment], local: true do |f|%>
           <div class="field">
             <%= f.label :message, "コメント投稿" %><br />
-            <%= f.text_area :message, class: :form__text, id: "editor" , class: :text_form %>
+            <%= f.text_area :message, id: "editor" , class: :comment_form %>
           </div>
           <div class="actions">
             <%= f.submit "投稿", class: :form__btn  %>
