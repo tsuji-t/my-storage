@@ -1,38 +1,65 @@
 <main class="main">
-  <div class="inner main-inner">
 
-    <%# ログインしているときは以下を表示する %>
-      <% if user_signed_in?%>
-       <div class="greeting">
-        <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link %>
-      </div>
-      <% end %>
+  <div class="inner main-body">
+    <div class="inner main-inner">
+
+      <%# ログインしているときは以下を表示する %>
+        <% if user_signed_in?%>
+        <div class="greeting">
+          <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link %>
+        </div>
+        <% end %>
 
 
-    <div class="word__wrapper">
-      <div class="date-user">
-        <p class="word__created">
-          <%= l @word.created_at %>
-        </p>
-        <%= link_to "by #{@word.user.nickname}", root_path, class: :card__user %>
+      <div class="word__wrapper">
+        <div class="date-user">
+          <p class="word__created">
+            <%= l @word.created_at %>
+          </p>
+          <%= link_to "by #{@word.user.nickname}", root_path, class: :card__user %>
+        </div>
+        <h1 class="show_title">
+          <%= @word.title %>
+        </h1>
+        <div class="show_tug">
+          <%= @word.tug %>
+        </div>
+        <div class="show_text">
+          <%= markdown(@word.text).html_safe %>
+        </div>
       </div>
-      <h1 class="show_title">
-        <%= @word.title %>
-      </h1>
-      <div class="show_tug">
-        <%= @word.tug %>
-      </div>
-      <div class="show_text">
-        <%= markdown(@word.text).html_safe %>
+      <div class="updete">
+        <div class="nav_edit">
+          <%= "最終更新日：#{l @word.updated_at}"%>
+        </div>
+        <% if user_signed_in? && current_user.id == @word.user.id %>
+          <%= link_to "編集", edit_word_path(@word.id), class: :nav_edit %>
+          <%= link_to "削除", word_path(@word.id), method: :delete, class: :nav_edit, data: { confirm: '削除しますか？' } %>
+        <% end %>
       </div>
     </div>
-    <div class="updete">
-      <div class="nav_edit">
-        <%= "最終更新日：#{l @word.updated_at}"%>
-      </div>
-      <% if user_signed_in? && current_user.id == @word.user.id %>
-        <%= link_to "編集", edit_word_path(@word.id), class: :nav_edit %>
-        <%= link_to "削除", word_path(@word.id), method: :delete, class: :nav_edit, data: { confirm: '削除しますか？' } %>
+
+    <div class="inner main_inner">
+
+      <ul class="comments_lists">
+        <% @comments.each do |comment|%>
+          <li class="comments_list">
+            <%= comment.message %>
+            <%= link_to comment.user.name, user_path(comment.user.id), class: :comment_user %>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= form_with model: [@word, @comment], local: true do |f|%>
+
+        <div class="field">
+          <%= f.label :message, "コメント投稿" %><br />
+          <%= f.text_area :message, class: :form__text, id: "editor" , class: :text_form %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "投稿", class: :form__btn  %>
+        </div>
       <% end %>
     </div>
   </div>
