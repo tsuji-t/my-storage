@@ -1,38 +1,90 @@
 <main class="main">
-  <div class="inner main-inner">
 
-    <%# ログインしているときは以下を表示する %>
-      <% if user_signed_in?%>
-       <div class="greeting">
-        <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link %>
-      </div>
-      <% end %>
+  <div class="inner main-body">
+    <div class="inner main-inner">
+
+      <%# ログインしているときは以下を表示する %>
+        <% if user_signed_in?%>
+        <div class="greeting">
+          <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link %>
+        </div>
+        <% end %>
 
 
-    <div class="word__wrapper">
-      <div class="date-user">
-        <p class="word__created">
-          <%= l @word.created_at %>
-        </p>
-        <%= link_to "by #{@word.user.nickname}", root_path, class: :card__user %>
+      <div class="word__wrapper">
+        <div class="date-user">
+          <p class="word__created">
+            <%= l @word.created_at %>
+          </p>
+          <%= link_to "by #{@word.user.nickname}", root_path, class: :card__user %>
+        </div>
+        <h1 class="show_title">
+          <%= @word.title %>
+        </h1>
+        <div class="show_tug">
+          <%= @word.tug %>
+        </div>
+        <div class="show_text">
+          <%= markdown(@word.text).html_safe %>
+        </div>
       </div>
-      <h1 class="show_title">
-        <%= @word.title %>
-      </h1>
-      <div class="show_tug">
-        <%= @word.tug %>
-      </div>
-      <div class="show_text">
-        <%= markdown(@word.text).html_safe %>
+      <div class="updete">
+        <div class="nav_edit">
+          <%= "最終更新日：#{l @word.updated_at}"%>
+        </div>
+        <% if user_signed_in? && current_user.id == @word.user.id %>
+          <%= link_to "編集", edit_word_path(@word.id), class: :nav_edit %>
+          <%= link_to "削除", word_path(@word.id), method: :delete, class: :nav_edit, data: { confirm: '削除しますか？' } %>
+        <% end %>
       </div>
     </div>
-    <div class="updete">
-      <div class="nav_edit">
-        <%= "最終更新日：#{l @word.updated_at}"%>
-      </div>
-      <% if user_signed_in? && current_user.id == @word.user.id %>
-        <%= link_to "編集", edit_word_path(@word.id), class: :nav_edit %>
-        <%= link_to "削除", word_path(@word.id), method: :delete, class: :nav_edit, data: { confirm: '削除しますか？' } %>
+
+    <div class="inner main-inner">
+      <h2 class="com_index">コメント一覧</h2>
+      <% if @comments.empty? %>
+        <div class="comment">
+            <div class="comment_body">
+              <div class="comment_title">
+                コメントはまだありません
+              </div>
+            </div>
+          </div>
+      <% else %>
+        <% @comments.each do |comment|%>
+          <div class="comment">
+            <div class="comment_body">
+              <div class="comment_title">
+                <%= comment.message %>
+              </div>
+              <div class="date-user">
+                <p class="word__created">
+                <%= l comment.created_at %>
+                </p>
+                <%= link_to "by  #{comment.user.nickname}", user_path(comment.user.id), class: :card__user %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="inner main-inner">
+      <% if user_signed_in? %>
+        <%= form_with model: [@word, @comment], local: true do |f|%>
+          <div class="field">
+            <%= f.label :message, "コメント投稿" %><br />
+            <%= f.text_area :message, id: "editor" , class: :comment_form %>
+          </div>
+          <div class="actions">
+            <%= f.submit "投稿", class: :form__btn  %>
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to "『ログインしてコメントする』", new_user_session_path, class: :login_word%>
+        <div class="comment_login">
+          <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+          <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+        </div>
       <% end %>
     </div>
   </div>

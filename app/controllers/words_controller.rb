@@ -20,6 +20,8 @@ class WordsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @word.comments.includes(:user)
   end
 
   def edit
