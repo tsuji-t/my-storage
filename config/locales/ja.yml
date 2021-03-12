@@ -3,6 +3,11 @@ ja:
     attributes:
       user:
         nickname: ユーザー名
+      word:
+        title: タイトル
+        text: 投稿記事
+        tug: サブタイトル
+        user: ユーザー名
   time:
     formats:
       default: "%Y/%m/%d %H:%M"

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 # 実行コマンド
-# bundle exec rspec spec/models/user_spec.rb 
+# bundle exec rspec spec/models/user_spec.rb
 
 RSpec.describe User, type: :model do
   before do
