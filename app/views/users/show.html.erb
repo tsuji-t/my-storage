@@ -7,20 +7,45 @@
         <%= link_to "#{current_user.nickname}さん", user_path(current_user.id), class: :greeting__link %>
       </div>
       <% end %>
-    
+
 
     <div class="word__wrapper">
-      <% if @words.empty?  %>
-        <h2 class="word index">
-        <%= "「#{@user.nickname}」さんの投稿はありません。" %>
-        </h2>
-      <% else %>
-        <h2 class="word index">
-        <%= "「#{@user.nickname}」さんの投稿一覧" %>
-        </h2>
-        <%= render partial: 'layouts/word', collection: @words %>
-      <% end %>
+      <h2 class="word index">
+        <%= "「#{@user.nickname}」さんの投稿一覧" %>
+      </h2>
+
+      <div class="tab-panel">
+        <!--タブ-->
+        <ul class="tab-group">
+          <li class="tab tab-A is-active">記事</li>
+          <li class="tab tab-B">コメント</li>
+        </ul>
+	
+      	<!--タブを切り替えて表示するコンテンツ-->
+        <div class="panel-group">
+          <div class="panel tab-A is-show">
+            <% if @words.empty?  %>
+              <h2 class="word index">記事投稿はありません。
+              </h2>
+            <% else %>
+              <%= render partial: 'layouts/word', collection: @words %>
+            <% end %>
+          </div>
+          <div class="panel tab-B">
+            <% if @comments.empty?  %>
+              <h2 class="word index">コメント投稿はありません。
+              </h2>
+            <% else %>
+              <%= render partial: 'layouts/comment', collection: @comments %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+
+      
     </div>
+
   </div>
   <%= render partial: "layouts/side_ber",locals: { words: @side_words } %>
 </main>

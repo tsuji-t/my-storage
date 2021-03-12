@@ -1,6 +1,7 @@
 class WordsController < ApplicationController
   before_action :side_ber
   before_action :find_word, only: [:show, :edit, :update, :destroy]
+
   def index
     @word = Word.includes(:user).order('created_at DESC')
     @words = @word.first(5)

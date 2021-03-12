@@ -1,0 +1,12 @@
+<div class="word">
+  <%= link_to "投稿先：#{comment.word.title}", word_path(comment.word_id), class: :word__tug %>
+  <div class="card__body">
+    <%= link_to markdown(comment.message).html_safe, word_path(comment.word_id), class: :comment_index%>
+    <div class="date-user">
+      <p class="word__created">
+        <%= l comment.created_at %>
+      </p>
+      <%= link_to "by #{comment.user.nickname}", user_path(comment.user_id), class: :card__user %>
+    </div>
+  </div>
+</div>

@@ -16,7 +16,7 @@
           <p class="word__created">
             <%= l @word.created_at %>
           </p>
-          <%= link_to "by #{@word.user.nickname}", root_path, class: :card__user %>
+          <%= link_to "by #{@word.user.nickname}", user_path(@word.user_id), class: :card__user %>
         </div>
         <h1 class="show_title">
           <%= @word.title %>
@@ -54,7 +54,7 @@
           <div class="comment">
             <div class="comment_body">
               <div class="comment_title">
-                <%= comment.message %>
+                <%= markdown(comment.message).html_safe %>
               </div>
               <div class="date-user">
                 <p class="word__created">
