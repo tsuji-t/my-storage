@@ -16,7 +16,7 @@
           <p class="word__created">
             <%= l @word.created_at %>
           </p>
-          <%= link_to "by #{@word.user.nickname}", user_path(@word.user_id), class: :card__user %>
+          <%= link_to "投稿者___#{@word.user.nickname}", user_path(@word.user_id), class: :card__user %>
         </div>
         <h1 class="show_title">
           <%= @word.title %>

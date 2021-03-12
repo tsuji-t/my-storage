@@ -1,5 +1,5 @@
 <div class="word">
-  <%= link_to "投稿先：#{comment.word.title}", word_path(comment.word_id), class: :word__tug %>
+  <%= link_to "#{comment.word.user.nickname}さんが投稿：#{comment.word.title}", word_path(comment.word_id), class: :word__tug %>
   <div class="card__body">
     <%= link_to markdown(comment.message).html_safe, word_path(comment.word_id), class: :comment_index%>
     <div class="date-user">
