@@ -11,7 +11,7 @@
 
     <div class="word__wrapper">
       <h2 class="word index">
-        <%= "「#{@user.nickname}」さんの投稿一覧" %>
+        <%= "「#{@user.nickname}」さんの投稿一覧" %>
       </h2>
 
       <div class="tab-panel">
@@ -23,22 +23,27 @@
 	
       	<!--タブを切り替えて表示するコンテンツ-->
         <div class="panel-group">
-          <div class="panel tab-A is-show">Content-A</div>
-          <div class="panel tab-B">Content-B</div>
+          <div class="panel tab-A is-show">
+            <% if @words.empty?  %>
+              <h2 class="word index">記事投稿はありません。
+              </h2>
+            <% else %>
+              <%= render partial: 'layouts/word', collection: @words %>
+            <% end %>
+          </div>
+          <div class="panel tab-B">
+            <% if @comments.empty?  %>
+              <h2 class="word index">コメント投稿はありません。
+              </h2>
+            <% else %>
+              <%= render partial: 'layouts/comment', collection: @comments %>
+            <% end %>
+          </div>
         </div>
       </div>
 
 
-      <% if @words.empty?  %>
-        <h2 class="word index">
-        <%= "「#{@user.nickname}」さんの投稿はありません。" %>
-        </h2>
-      <% else %>
-        <h2 class="word index">
-        <%= "「#{@user.nickname}」さんの投稿一覧" %>
-        </h2>
-        <%= render partial: 'layouts/word', collection: @words %>
-      <% end %>
+      
     </div>
 
   </div>

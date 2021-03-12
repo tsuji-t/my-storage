@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @words = @user.words
+    @words = @user.words.order('created_at DESC')
+    @comments = @user.comments.order('created_at DESC')
   end
 
   private
