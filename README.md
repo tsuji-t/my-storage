@@ -1,24 +1,49 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+## users テーブル
 
-* Ruby version
+| Column               | Type    | Options                   |
+| -------------------- | ------- | ------------------------- |
+| nickname             | string  | null: false               |
+| email                | string  | null: false, unique: true | 
+| encrypted_password   | string  | null: false               |
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :words
+- has_many :comments
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+## words テーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| title    | string     | null: false                    |
+| tug      | string     |                                |
+| text     | text       | null: false                    |
+| user     | references | null: false, foreign_key: true |
 
-* Deployment instructions
 
-* ...
+### Association
+
+- belongs_to :user
+- has_many   :comments
+
+
+
+## comments テーブル
+
+| Column    | Type       | Options                           |
+| --------- | ---------- | --------------------------------- |
+| message   | string     | null: false                       |
+| user      | references | null: false, foreign_key: true    |
+| word      | references | null: false, foreign_key: true    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :word
+
