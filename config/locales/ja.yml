@@ -8,6 +8,10 @@ ja:
         text: 投稿記事
         tug: サブタイトル
         user: ユーザー名
+      comment:
+        message: コメント
+        user: ユーザー名
+        word: 記事
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
