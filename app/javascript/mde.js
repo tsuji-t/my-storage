@@ -1,3 +1,4 @@
+import 'simplemde/dist/simplemde.min.css'
 import SimpleMDE from 'simplemde'
 
 function mde() {
