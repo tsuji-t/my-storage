@@ -7,9 +7,11 @@
 - 日頃のメモ帳がわりに
 
 ### URL
+- https://my-storage.herokuapp.com/
 
 #### テストアカウント
-
+user名    :test@test
+password  :test111
 
 #### 利用方法
 
