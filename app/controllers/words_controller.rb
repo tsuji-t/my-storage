@@ -1,6 +1,8 @@
 class WordsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :side_ber
   before_action :find_word, only: [:show, :edit, :update, :destroy]
+  before_action :access_check, only: [:edit, :update, :destroy]
 
   def index
     @word = Word.includes(:user).order('created_at DESC')
@@ -55,6 +57,12 @@ class WordsController < ApplicationController
   def side_ber
     @side_words = Word.includes(:user).order('created_at DESC')
   end
+
+  def access_check
+    unless @word.user_id == current_user.id
+      redirect_to root_path
+    end
+  end 
 
   def word_params
     params.require(:word).permit(:title, :tug, :text).merge(user_id: current_user.id)
