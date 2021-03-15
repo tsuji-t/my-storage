@@ -3,16 +3,42 @@
 ## アプケーション名 ： My Storage
 
 ### アプリケーション概要
+- 記事投稿サイト
+- 日頃のメモ帳がわりに
+
+### URL
+
+#### テストアカウント
 
 
+#### 利用方法
 
+- ユーザー登録後、右上「New Word」より記事を投稿
+- 投稿本文はマークダウン記法で投稿
+- ログインユーザーは投稿記事へコメント可
 
+### 目指した課題解決
+- 自身の過去の課題解決で行ってきた問題点、考え方のまとめ
+- アウトプットによる理解度の向上
+- 記録するためのメモ・ノート替わり
 
+### 洗い出した要件
 
+- ユーザー登録機能
+- 記事投稿機能
+- 記事編集・削除機能
+- 検索機能
+- コメント機能
+- ユーザー別投稿・コメント一覧表示
 
-# テーブル設計
+### 実装した機能についてのGIFと説明
 
-## users テーブル
+### 実装予定の機能
+- サブタイトル(タグ)別のカテゴリー別検索機能
+
+## テーブル設計
+
+### users テーブル
 
 | Column               | Type    | Options                   |
 | -------------------- | ------- | ------------------------- |
@@ -20,14 +46,14 @@
 | email                | string  | null: false, unique: true | 
 | encrypted_password   | string  | null: false               |
 
-### Association
+#### Association
 
 - has_many :words
 - has_many :comments
 
 
 
-## words テーブル
+#### words テーブル
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
@@ -44,7 +70,7 @@
 
 
 
-## comments テーブル
+#### comments テーブル
 
 | Column    | Type       | Options                           |
 | --------- | ---------- | --------------------------------- |
@@ -52,8 +78,10 @@
 | user      | references | null: false, foreign_key: true    |
 | word      | references | null: false, foreign_key: true    |
 
-### Association
+#### Association
 
 - belongs_to :user
 - belongs_to :word
 
+
+### ローカルでの動作方法
