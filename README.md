@@ -53,7 +53,7 @@
 
 
 
-#### words テーブル
+### words テーブル
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
@@ -63,14 +63,14 @@
 | user     | references | null: false, foreign_key: true |
 
 
-### Association
+#### Association
 
 - belongs_to :user
 - has_many   :comments
 
 
 
-#### comments テーブル
+### comments テーブル
 
 | Column    | Type       | Options                           |
 | --------- | ---------- | --------------------------------- |
