@@ -15,7 +15,9 @@
         <%= "「#{@keyword}」に一致するものは見つかりませんでした。" %>
         </h2>
       <% else %>
-        <h2 class="word index">検索結果一覧</h2>
+        <h2 class="word index">
+          <%= "「#{@keyword}」検索結果一覧" %>
+        </h2>
         <%= render partial: 'layouts/word', collection: @words %>
       <% end %>
     </div>
