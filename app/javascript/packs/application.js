@@ -7,8 +7,8 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("simplemde")
-require("../mde")
-require("../tabs")
+require("mde")
+require("tabs")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
