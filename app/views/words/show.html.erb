@@ -1,7 +1,7 @@
 <main class="main">
 
   <div class="inner main-body">
-    <div class="inner main-inner">
+    <div class="main-inner">
 
       <%# ログインしているときは以下を表示する %>
         <% if user_signed_in?%>
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class="inner main-inner">
+    <div class="main-inner">
       <h2 class="com_index">コメント一覧</h2>
       <% if @comments.empty? %>
         <div class="comment">
@@ -68,7 +68,7 @@
       <% end %>
     </div>
 
-    <div class="inner main-inner">
+    <div class="main-inner">
       <% if user_signed_in? %>
         <%= form_with model: [@word, @comment], local: true do |f|%>
           <div class="field">
