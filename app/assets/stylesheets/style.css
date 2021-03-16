@@ -378,9 +378,14 @@ a {
   color: black;
 }
 
-.comment_form{
-  width: calc(100% - 100px);
-  height: 200px;
+.message_title{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.comment_field{
+  width: calc(100% - 90px);
   margin: 0 50px;
   font-size: 17px;
 }
