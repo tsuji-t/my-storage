@@ -47,7 +47,7 @@ a {
   padding: 20px 0;
 }
 .inner {
-  width: 1024px;
+  width: 64%;
   margin: 0 auto;
 }
 .nav {
@@ -93,12 +93,18 @@ a {
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  width: 100%;
   display: flex;
   flex-direction:column;
   align-items: center;
 }
 
+.new_form{
+  width: 100%;
+}
+
 .field{
+  width: 100%;
   margin: 10px 0;
 }
 
@@ -140,19 +146,19 @@ a {
 
 
 .title_form{
-  width: 1020px;
+  width: 100%;
   height: 40px;
   font-size: 17px;
 }
 
 .tug_form{
-  width: 1020px;
+  width: 100%;
   height: 35px;
   font-size: 17px;
 }
 
 .text_form{
-  width: 1020px;
+  width: 100%;
   height: 500px;
   font-size: 20px;
   color: black;
@@ -164,6 +170,15 @@ a {
   font-size: 0.8em;
   color: #9b9b9b;
   text-decoration: none;
+}
+
+.preview{
+  margin:4px;
+  width:45%;
+  height:500px;
+  border:1px solid gray;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 
@@ -207,7 +222,7 @@ a {
 
 .side_ber{
   height: 100%;
-  width: 300px;
+  width: 20%;
   border-left: double 5px #fae6d2;
   margin-right: 50px;
   margin-bottom: 48px;
@@ -363,11 +378,12 @@ a {
   color: black;
 }
 
-.field{
+.comment_form{
+  width: calc(100% - 100px);
+  height: 200px;
   margin: 0 50px;
-  
+  font-size: 17px;
 }
-
 
 /* ユーザーページ */
 .tub-panel{

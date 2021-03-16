@@ -1,4 +1,4 @@
-<%= form_with model: word, local: true do |f|%>
+<%= form_with model: word, local: true, class: :new_form do |f|%>
 
 <%= render 'layouts/error_messages', model: f.object %>
 
@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= f.label :text, "投稿記事" %><br />
-    <%= f.text_area :text, id: "editor" %>
+    <%= f.text_area :text, id: "editor", class: :text_form %>
   </div>
 
 
