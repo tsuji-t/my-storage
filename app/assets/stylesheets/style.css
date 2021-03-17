@@ -63,7 +63,8 @@ td{
 
 .CodeRay{
   background-color:  #eee;
-  padding: 0 20px;
+  padding: 0 10px;
+  overflow: auto;
 }
 
 /* ヘッダー */
