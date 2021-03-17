@@ -32,7 +32,7 @@ class WordsController < ApplicationController
 
   def update
     if @word.update(word_params)
-      redirect_to root_path
+      redirect_to action: :show
     else
       render :edit
     end
