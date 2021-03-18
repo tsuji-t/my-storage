@@ -61,10 +61,11 @@ td{
     max-width: 600px;
 }
 
-.CodeRay{
+pre, code{
   background-color:  #eee;
   padding: 0 10px;
   overflow: auto;
+  border-radius: 5px;
 }
 
 /* ヘッダー */
@@ -335,7 +336,16 @@ td{
 .word__created {
   font-size: 16px;
 }
-.card__user {
+
+.edit_user{
+  display: flex;
+}
+
+.index_edit{
+  margin-right: 10px;
+}
+
+.card__user, .index_edit{
   display: block;
   font-size: 12px;
   color: #999;
