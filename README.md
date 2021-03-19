@@ -11,11 +11,11 @@
 ### URL
 https://my-storage.herokuapp.com/
 
-#### テストアカウント
-user名    :test@test  
+### テストアカウント
+user      :test@test  
 password  :test111
 
-#### 利用方法
+### 利用方法
 
 ユーザー登録後、右上「New Word」より記事を投稿  
 投稿本文はマークダウン記法で投稿  
