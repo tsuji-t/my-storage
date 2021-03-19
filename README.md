@@ -1,17 +1,19 @@
 # README
 
-## アプケーション名 ： My Storage
+## アプケーション名 
+
+#### My Storage
 
 ### アプリケーション概要
 - 記事投稿サイト
-- 日頃のメモ帳がわりに
+- 学習のノートがわりに
 
 ### URL
 - https://my-storage.herokuapp.com/
 
 #### テストアカウント
-user名    :test@test
-password  :test111
+- user名    :test@test
+- password  :test111
 
 #### 利用方法
 
@@ -20,6 +22,7 @@ password  :test111
 - ログインユーザーは投稿記事へコメント可
 
 ### 目指した課題解決
+
 - 自身の過去の課題解決で行ってきた問題点、考え方のまとめ
 - アウトプットによる理解度の向上
 - 記録するためのメモ・ノート替わり
