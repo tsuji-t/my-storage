@@ -24,7 +24,7 @@ li {
 }
 
 img {
-  max-width: 80%;
+  max-width: 70%;
   vertical-align: bottom;
 }
 
@@ -63,9 +63,13 @@ td{
 
 pre, code{
   background-color:  #eee;
-  padding: 0 10px;
   overflow: auto;
   border-radius: 5px;
+}
+
+pre{
+  overflow: auto;
+  padding: 0.5em 10px;
 }
 
 /* ヘッダー */
@@ -227,16 +231,16 @@ pre, code{
   margin-bottom: 30px;
   border-radius: 20px;
   height: 2.3em;
-  width: 260px;
   overflow: hidden;
 }
 
-.search_form input[type="text"]{
+.search_input{
   border: none;
   height: 2.0em;
+  width: calc(100% - 2.5em);
 }
 
-.search_form input[type="text"]:focus {
+.search_input:focus {
   outline: 0;
 }
 
