@@ -1,11 +1,11 @@
-class CommentsController < ApplicationController
+class FavoritesController < ApplicationController
   before_action :authenticate_user!
   before_action :side_ber
 
   def create
-   @comment = Comment.new(comment_params)
-    if @comment.save
-      redirect_to word_path(@comment.word)
+   @favorite = Favorite.new(favotite_params)
+    if @favotite.save
+      redirect_to word_path(@favorite.word)
     else
       @word = Word.find(params[:word_id])
       @comments = @word.comments.includes(:user)
@@ -15,8 +15,8 @@ class CommentsController < ApplicationController
 
   private
 
-  def comment_params
-    params.require(:comment).permit(:message).merge(user_id: current_user.id, word_id: params[:word_id])
+  def favorite_params
+    params.require(:favorite).merge(user_id: current_user.id, word_id: params[:word_id])
   end
 
   def side_ber
