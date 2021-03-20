@@ -29,11 +29,18 @@
         </div>
       </div>
       <div class="main_under">
-        <% if user_signed_in? %>
-          <%= form_with model: [@word, @favorite], local: true do |f|%>
-            <%= button_tag icon('far','thumbs-up'), :type => "submit", class: "favorite_btn" %>
+        <div class="favorite_inf">
+          <% if user_signed_in? %>
+            <% if @word.favorites.where(user_id: current_user.id).empty? %>
+              <%=link_to icon('far','star', class: "favorite_get"), word_favorites_path(@word.id), method: :post %>
+              <%= @favorites.count %>
+            <% else %>
+              <%=link_to icon('fas','star', class: "favorite_out"), word_favorite_path(@word.id), method: :delete %>
+              <%= @favorites.count %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
+
         <div class="updete">
           <div class="nav_edit">
             <%= "最終更新日：#{l @word.updated_at}"%>

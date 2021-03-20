@@ -7,6 +7,12 @@ class FavoritesController < ApplicationController
     redirect_to word_path(@favorite.word)
   end
 
+  def destroy
+    favorite = Favorite.find_by(user_id: current_user.id, word_id: params[:word_id])
+    favorite.destroy
+    redirect_to word_path
+  end
+
   private
 
   def favorite_params

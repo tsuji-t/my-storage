@@ -379,16 +379,18 @@ pre{
 
 .updete{
   display: flex;
+  align-items: flex-end;
 }
 
-.favorite_btn{
+.favorite_get{
   margin-left:50px;
-  font-size: 1.3em;
-  border: none;
-  background: none;
+  font-size: 2em;
   color: #4CACB9;
-  width: 2.5em;
-  height: 2.5em;
+}
+
+.favorite_out{
+  margin-left:50px;
+  font-size: 2em;
 }
 
 
