@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :nickname, presence: true
 
   has_many :words
-  has_many :favorites, dependent: :destroy
+  has_many :favorites
   has_many :comments
 end

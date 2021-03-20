@@ -3,20 +3,14 @@ class FavoritesController < ApplicationController
   before_action :side_ber
 
   def create
-   @favorite = Favorite.new(favotite_params)
-    if @favotite.save
-      redirect_to word_path(@favorite.word)
-    else
-      @word = Word.find(params[:word_id])
-      @comments = @word.comments.includes(:user)
-      render "words/show"
-    end
+    @favorite = Favorite.create(favorite_params)
+    redirect_to word_path(@favorite.word)
   end
 
   private
 
   def favorite_params
-    params.require(:favorite).merge(user_id: current_user.id, word_id: params[:word_id])
+    params.permit.merge(user_id: current_user.id, word_id: params[:word_id])
   end
 
   def side_ber

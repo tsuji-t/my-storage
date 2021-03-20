@@ -372,9 +372,23 @@ pre{
   margin-bottom: 40px;
 }
 
+.main_under{
+  display: flex;
+  justify-content: space-between;
+}
+
 .updete{
   display: flex;
-  justify-content: flex-end;
+}
+
+.favorite_btn{
+  margin-left:50px;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #4CACB9;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 

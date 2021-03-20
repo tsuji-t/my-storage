@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
       redirect_to word_path(@comment.word)
     else
       @word = Word.find(params[:word_id])
+      @favorite = Favorite.new
       @comments = @word.comments.includes(:user)
       render "words/show"
     end

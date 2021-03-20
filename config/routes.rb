@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :words do
     resources :comments, only: :create
-    resources :favarotes, only: [:create, :show, :destroy]
+    resources :favorites, only: [:create, :show, :destroy]
     collection do
       get 'search'
     end

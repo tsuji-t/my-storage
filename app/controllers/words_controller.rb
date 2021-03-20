@@ -25,6 +25,7 @@ class WordsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @word.comments.includes(:user)
+    @favorite = Favorite.new
   end
 
   def edit
