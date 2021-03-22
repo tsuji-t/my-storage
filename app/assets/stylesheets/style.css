@@ -372,9 +372,25 @@ pre{
   margin-bottom: 40px;
 }
 
+.main_under{
+  display: flex;
+  justify-content: space-between;
+}
+
 .updete{
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.favorite_get{
+  margin-left:50px;
+  font-size: 2em;
+  color: #4CACB9;
+}
+
+.favorite_out{
+  margin-left:50px;
+  font-size: 2em;
 }
 
 

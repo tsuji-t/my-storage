@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root "words#index"
   resources :users, only: :show
   resources :words do
-    resources :comments
+    resources :comments, only: :create
+    resources :favorites, only: [:create, :show, :destroy]
     collection do
       get 'search'
     end
