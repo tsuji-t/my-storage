@@ -7,6 +7,7 @@ class WordsController < ApplicationController
   def index
     @word = Word.includes(:user).order('created_at DESC')
     @words = @word.first(5)
+    @favorites = Favorite.group(:word_id).order('count(user_id) DESC').limit(3)
   end
 
   def new

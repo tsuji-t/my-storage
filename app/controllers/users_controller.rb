@@ -5,7 +5,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @words = @user.words.order('created_at DESC')
     @comments = @user.comments.order('created_at DESC')
-    @favorites = Favorite.where(user_id: @user.id).group(:word_id).order('count(user_id) desc')
+    @favorites = @user.favorites
+
   end
 
   private

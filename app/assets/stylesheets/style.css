@@ -511,6 +511,14 @@ pre{
   overflow: hidden;
 }
 
+.ind_fav{
+  margin-right: 1em;
+  color: #FCA451;
+}
+
+.ind_count{
+  margin-right: 1em;
+}
 
 /* フッター */
 

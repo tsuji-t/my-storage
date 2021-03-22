@@ -49,25 +49,7 @@
               <h2 class="word index">お気に入り登録した記事はありません。
               </h2>
             <% else %>
-              <% @favorites.each do |favorite| %>
-                <div class="word">
-                  <%= link_to favorite.word.tug, word_path(favorite.word.id), class: :word__tug %>
-                  <div class="card__body">
-                    <%= link_to favorite.word.title, word_path(favorite.word.id), class: :word__title%>
-                    <div class="date-user">
-                      <div class="word__created">
-                      <%= l favorite.word.created_at %>
-                      </div>
-                      <div class="edit_user">
-                        <% if user_signed_in? && current_user.id == favorite.word.user.id %>
-                          <%= link_to "編集", edit_word_path(favorite.word.id), class: :index_edit %>
-                        <% end %>
-                        <%= link_to "投稿者 #{favorite.word.user.nickname}", user_path(favorite.word.user_id), class: :card__user %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <%end%>
+               <%= render partial: 'layouts/index_favorite', collection: @favorites, as: "favorite" %>
             <% end %>
           </div>
 
