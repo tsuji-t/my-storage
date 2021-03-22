@@ -377,22 +377,32 @@ pre{
   justify-content: space-between;
 }
 
+.favorite_inf{
+  display: flex;
+  align-items: flex-end;
+  padding: 0.5em 1em;
+}
+
+.fav_count{
+  font-weight: bold;
+}
+
+.favorite_get{
+  margin:0 0.3em;
+  font-size: 3em;
+  color: #FCA451;
+}
+
+.favorite_out{
+  margin:0 0.3em;
+  font-size: 3em;
+  color: #FCA451;
+}
+
 .updete{
   display: flex;
   align-items: flex-end;
 }
-
-.favorite_get{
-  margin-left:50px;
-  font-size: 2em;
-  color: #4CACB9;
-}
-
-.favorite_out{
-  margin-left:50px;
-  font-size: 2em;
-}
-
 
 .com_index{
   width: 100% ;

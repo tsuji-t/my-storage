@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
       @word = Word.find(params[:word_id])
       @favorite = Favorite.new
       @comments = @word.comments.includes(:user)
+      @favorites = Favorite.where(word_id: @word.id)
       render "words/show"
     end
   end
