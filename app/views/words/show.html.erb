@@ -29,18 +29,8 @@
         </div>
       </div>
       <div class="main_under">
-        <div class="favorite_inf">
-          <% if user_signed_in? %>
-            <% if @word.favorites.where(user_id: current_user.id).empty? %>
-              <div class="fav_count">お気に入り登録</div>
-              <%=link_to icon('far','star', class: "favorite_get"), word_favorites_path(@word.id), method: :post %>
-              <%= @favorites.count %>
-            <% else %>
-              <div class="fav_count">お気に入り済み</div>
-              <%=link_to icon('fas','star', class: "favorite_out"), word_favorite_path(@word.id), method: :delete %>
-              <%= @favorites.count %>
-            <% end %>
-          <% end %>
+        <div class="favorite_inf" id="word_<%= @word.id %>" >
+          <%= render 'layouts/favorite', word: @word %>
         </div>
 
         <div class="updete">
