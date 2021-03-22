@@ -1,16 +1,16 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
-  before_action :side_ber
+  before_action :find_word
+  before_action :find_favorite
+
 
   def create
-    @favorite = Favorite.create(favorite_params)
-    redirect_to word_path(@favorite.word)
+    favorite = Favorite.create(favorite_params)
   end
 
   def destroy
     favorite = Favorite.find_by(user_id: current_user.id, word_id: params[:word_id])
     favorite.destroy
-    redirect_to word_path
   end
 
   private
@@ -18,9 +18,13 @@ class FavoritesController < ApplicationController
   def favorite_params
     params.permit.merge(user_id: current_user.id, word_id: params[:word_id])
   end
-
-  def side_ber
-    @side_words = Word.includes(:user).order('created_at DESC')
-  end
   
+  def find_word
+    @word = Word.find(params[:word_id])
+  end
+
+  def find_favorite
+    @favorites = Favorite.where(word_id: @word.id)
+  end
+
 end

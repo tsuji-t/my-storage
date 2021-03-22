@@ -1,0 +1,1 @@
+document.getElementById('word_<%= @word.id %>').innerHTML = "<%= escape_javascript(render('layouts/favorite',word: @word)) %>"

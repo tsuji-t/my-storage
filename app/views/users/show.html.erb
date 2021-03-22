@@ -19,26 +19,40 @@
         <ul class="tab-group">
           <li class="tab tab-A is-active">記事</li>
           <li class="tab tab-B">コメント</li>
+          <% if current_user.id == @user.id%>
+            <li class="tab tab-C">お気に入り</li>
+          <% end %>
         </ul>
 	
       	<!--タブを切り替えて表示するコンテンツ-->
         <div class="panel-group">
           <div class="panel tab-A is-show">
-            <% if @words.empty?  %>
+            <% if @words.empty? %>
               <h2 class="word index">記事投稿はありません。
               </h2>
             <% else %>
               <%= render partial: 'layouts/word', collection: @words %>
             <% end %>
           </div>
+
           <div class="panel tab-B">
-            <% if @comments.empty?  %>
+            <% if @comments.empty? %>
               <h2 class="word index">コメント投稿はありません。
               </h2>
             <% else %>
               <%= render partial: 'layouts/comment', collection: @comments %>
             <% end %>
           </div>
+
+          <div class="panel tab-c">
+            <% if @favorites.empty? %>
+              <h2 class="word index">お気に入り登録した記事はありません。
+              </h2>
+            <% else %>
+               <%= render partial: 'layouts/index_favorite', collection: @favorites, as: "favorite" %>
+            <% end %>
+          </div>
+
         </div>
       </div>
 

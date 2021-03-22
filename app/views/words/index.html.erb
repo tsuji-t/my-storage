@@ -11,8 +11,10 @@
     <div class="word__wrapper">
 
       <%# 部分テンプレートで一覧を表示 %>
-      <h2 class="word index">新着一覧</h2>
+      <h2 class="word index">新着-TOP5</h2>
       <%= render partial: 'layouts/word', collection: @words %>
+      <h2 class="word index">お気に入り-TOP3</h2>
+      <%= render partial: 'layouts/index_favorite', collection: @favorites, as: "favorite" %>
     </div>
   </div>
   <%= render partial: "layouts/side_ber",locals: { words: @side_words } %>
