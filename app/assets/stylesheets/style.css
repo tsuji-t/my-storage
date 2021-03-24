@@ -391,53 +391,90 @@ pre{
   color: #ff7285;
 }
 
-.favorite_out{
+.btn,
+a.btn,
+button.btn {
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
   display: inline-block;
-  text-decoration: none;
-  width: 1.7em;
-  height: 1.7em;
-  line-height: 50px;
-  font-size: 1.5em;
-  padding: 5px;
-  margin:0 0.3em;
-  border-radius: 12px;
+  cursor: pointer;
   text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
-  transition: .3s;
-  color: #ff6d82;
-  background-image: linear-gradient(#ffcfd7 0%, #ff7285 100%);
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5em;
 }
 
-.favorite_get{
-  display: inline-block;
-  text-decoration: none;
-  width: 1.7em;
-  height: 1.7em;
-  line-height: 50px;
-  font-size: 1.5em;
-  padding: 5px;
-  margin:0 0.3em;
-  border-radius: 12px;
-  text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
-  transition: .3s;
-  color: #ff6d82;
-  background-image: linear-gradient(#ffcfd7 0%, #ff7285 100%);
-}
-.favorite_get i{
-  line-height: 50px;
+a.btn-tag {
+  padding: 0.7em 1em 0.7em 4em;
+  margin-right: 1em;
 }
 
-.favorite_get:hover{
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.28);
-  -webkit-transform: translateY(-1px);
-  transform: translateY(-1px);
+a.btn-tag:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  content: "";
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+a.btn-tag--favorite {
+  color: #fff;
+  background: #f39800;
+}
+
+a.btn-tag--favorite:before {
+  background: #ffffffc2;
+}
+
+a.btn-tag--favorite i {
+  font-size: 120%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  padding: 0.8em 0;
+  transition: all 0.3s;
+  text-align: center;
+  letter-spacing: 0;
+  opacity: 0.5;
+  color: #f39800;
+}
+
+a.btn-tag--favorited {
+  color: #fff;
+  background: #f39800;
+}
+
+a.btn-tag--favorited:before {
+  background: #ffffffc2;
+}
+
+a.btn-tag--favorited i {
+  font-size: 132%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  padding: 0.7em 0;
+  transition: all 0.3s;
+  text-align: center;
+  letter-spacing: 0;
+  color: #f39800;
+}
+
+a.btn-tag--favorite:hover {
+  background: #ffa50e;
+}
+
+a.btn-tag--favorite:hover i {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 

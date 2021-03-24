@@ -1,11 +1,13 @@
 <% if user_signed_in? %>
   <% if word.favorites.where(user_id: current_user.id).empty? %>
-    <div class="fav_count">お気に入り登録</div>
-    <%=link_to icon('far','star', class: "favorite_get"), word_favorites_path(word.id), method: :post, remote: true %>
+    <%=link_to word_favorites_path(word.id), class: "btn btn-tag btn-tag--favorite", method: :post, remote: true do %>
+      <i class="fas fa-star"></i><div>お気に入り追加</div>
+    <% end %>
     <%= word.favorites.count %>
   <% else %>
-    <div class="fav_count">お気に入り解除</div>
-    <%=link_to icon('fas','star', class: "favorite_out"), word_favorite_path(word.id, word.favorites.ids), method: :delete, remote: true %>
+    <%=link_to word_favorite_path(word.id, word.favorites.ids), class: "btn btn-tag btn-tag--favorited", method: :delete, remote: true do%>
+      <i class="fas fa-star"></i><div>お気に入り解除</div>
+    <% end %>
     <%= word.favorites.count %>
   <% end %>
 <% end %>
