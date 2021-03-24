@@ -12,6 +12,10 @@ ja:
         message: コメント
         user: ユーザー名
         word: 記事
+      favorite:
+        favorite: お気に入り
+        user: ユーザー名
+        word: 記事
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
