@@ -609,12 +609,12 @@ a.btn-taged i {
   }
   .inner {
     width: calc(100% - 1em);
-    margin: 0 0.5em;
+    margin: 0 1em;
   }
   .word__wrapper {
     display: flex;
     flex-direction: column;
-    padding: 0 0.2em;
+    padding: 0 0.5em;
     min-height: calc(100vh - 161px);
   }
   .side_ber {
