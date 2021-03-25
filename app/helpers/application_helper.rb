@@ -4,8 +4,9 @@ module ApplicationHelper
 
   class HTMLwithCoderay < Redcarpet::Render::HTML
     def block_code(code, language)
+      unless language == nil
         language = language.split(':')[0]
-
+      end
           case language.to_s
           when 'rb'
             lang = 'ruby'
