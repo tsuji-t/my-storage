@@ -12,7 +12,7 @@
 https://my-storage.herokuapp.com/
 
 ### テストアカウント
-user      :sample@111
+user      :sample@111  
 password  :sample111
 
 ### 利用方法
