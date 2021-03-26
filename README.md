@@ -107,7 +107,7 @@ password  :sample111
 - belongs_to :user
 - belongs_to :word
 
-### ER
+### ER図
 
 ![ER](https://user-images.githubusercontent.com/78344279/112260914-30736880-8cae-11eb-8d6b-b249cbe30d73.png)
 
