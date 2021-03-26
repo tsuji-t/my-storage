@@ -364,11 +364,13 @@ pre{
 /* 詳細ページ */
 
 .show_title{
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .show_tug{
   margin-bottom: 40px;
+  padding-bottom: 1em;
+  border-bottom: solid 1px #de815e;
 }
 
 .show_text{
