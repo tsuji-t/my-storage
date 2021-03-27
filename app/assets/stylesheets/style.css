@@ -66,11 +66,10 @@ pre, code{
   overflow: auto;
   border-radius: 5px;
   overflow: auto;
-  padding: 0.5em 10px;
 }
 
 pre{
-  
+  padding: 0.5em 10px;
 }
 
 /* ヘッダー */
