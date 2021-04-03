@@ -611,10 +611,13 @@ a.btn-taged i {
     flex-direction: column;
     min-height: 50vh;
   }
+  .main_under{
+    display: block;
+  }
 }  
 
 @media (max-width: 700px){
-  body, h1, h2, p, .comment_title, .word__created, .message_title, .comment_field, .show_text, .word__title {
+  body, h1, h2, p, .comment_title, .word__created, .message_title, .comment_field, .show_text, .word__title, .greeting {
     font-size: xx-small;
   }
   .main{
@@ -658,5 +661,24 @@ a.btn-taged i {
     width: 2em;
     height: 2em;
   }
+
+  .greeting{
+    font-weight: bold;
+  padding:5px 5px 0;
+  margin-bottom: 10px;
+  }
+
+  .favorite_inf {
+    padding: 0em 5px 5px;
+  }
+  .main_under{
+    display: block;
+  }
+
+  .updete{
+    justify-content: flex-end;
+    padding: 5px 5px 10px;
+  }
+  
 }
   
