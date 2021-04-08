@@ -268,6 +268,7 @@ pre{
   overflow: auto;
   padding: 20px;
   background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .side_top{
@@ -294,6 +295,7 @@ pre{
 .main-inner{
   background-color: white;
   margin-bottom: 48px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .greeting{
