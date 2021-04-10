@@ -72,8 +72,8 @@ pre{
   padding: 0.5em 10px;
 }
 
-pre > span, pre > span > span{
-  background-color: #eee!important;
+.code > pre > span, .code > pre > span > span{
+  background-color:transparent!important;
 }
 
 /* ヘッダー */
