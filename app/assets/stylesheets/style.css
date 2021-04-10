@@ -72,6 +72,10 @@ pre{
   padding: 0.5em 10px;
 }
 
+pre > span, pre > span > span{
+  background-color: #eee!important;
+}
+
 /* ヘッダー */
 
 .body{
