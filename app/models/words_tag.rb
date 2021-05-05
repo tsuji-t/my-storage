@@ -1,12 +1,11 @@
-class FormwordsTag
+class WordsTag
 
   include ActiveModel::Model
-  attr_accessor :title, :text, :tug, :name, :user_id,
+  attr_accessor :title, :text, :tug, :name, :user_id
 
   with_options presence: true do
     validates :title
     validates :text
-    validates :name
   end
 
   def save

@@ -11,12 +11,13 @@ class WordsController < ApplicationController
   end
 
   def new
-    @word = Word.new
+    @word = WordsTag.new
   end
 
   def create
     @word = Word.new(word_params)
-    if @word.save
+    if @word.valid?
+      @word.save
       redirect_to root_path
     else
       render :new
@@ -68,6 +69,6 @@ class WordsController < ApplicationController
   end 
 
   def word_params
-    params.require(:word).permit(:title, :tug, :text).merge(user_id: current_user.id)
+    params.require(:words_tag).permit(:title, :tug, :text, :name).merge(user_id: current_user.id)
   end
 end
